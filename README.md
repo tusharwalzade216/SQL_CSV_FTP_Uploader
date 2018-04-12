@@ -12,6 +12,7 @@ This Powershell based Utility is useful to get SQL output as CSV file & upload i
 ==================================== Pre-requisits ============================
 - Windows
 - PowerShell
+- MSSQL Server
 - A working FTP Server (eg. filezilla, for local)
 
 ==================================== Run ======================================
