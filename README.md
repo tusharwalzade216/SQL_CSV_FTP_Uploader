@@ -12,6 +12,7 @@ This Utility is useful to get SQL output as CSV file & upload it to FTP server.
 ==================================== Pre-requisits ============================
 - Windows
 - PowerShell
+- A working FTP Server (eg. filezilla, for local)
 
 ==================================== Run ======================================
 - Update the necessary paths & credentials in files
