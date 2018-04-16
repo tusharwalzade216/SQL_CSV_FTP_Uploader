@@ -1,3 +1,4 @@
+
 ==================================== Use ======================================
 
 This Powershell based Utility is useful to get SQL output as CSV file & upload it to FTP server. And sends an aknowledgement to the specified emails after each successful/ errorneous upload.
@@ -20,3 +21,6 @@ This Powershell based Utility is useful to get SQL output as CSV file & upload i
 - Update the necessary paths & credentials in files
 - Run this file - `scheduleOnce.bat` as an Administrator.
     - It will schedule the task using windows task scheduler, so that it would run periodically.
+
+==================================== Delete =====================================
+- If you want to delete this scheduled task from scheduler, just run the file - `deleteTask.bat` as an Administrator.
