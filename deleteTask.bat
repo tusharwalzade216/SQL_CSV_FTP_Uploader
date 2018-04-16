@@ -1,0 +1,1 @@
+schtasks /delete /tn "SQL_CSV_FTP_Uploader" /f
