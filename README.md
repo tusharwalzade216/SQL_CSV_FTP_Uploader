@@ -1,7 +1,7 @@
 
 ==================================== Use ======================================
 
-This Powershell based Utility is useful to get SQL output as CSV file & upload it to FTP server. And sends an aknowledgement to the specified emails after each successful/ errorneous upload.
+This Powershell based Utility is useful to get SQL output as CSV file & upload it to FTP server. And sends an acknowledgement to the specified emails after each successful/ erroneous upload.
 
 ==================================== Files ======================================
 1. gencsv.ps1 -> code to generate csv & upload to ftp
@@ -18,7 +18,7 @@ This Powershell based Utility is useful to get SQL output as CSV file & upload i
 - A working FTP Server (eg. filezilla, for local)
 
 ==================================== Run ======================================
-- Update the necessary paths & credentials in files
+- Update the necessary paths & FTP, SMTP credentials/ details in files
 - Run this file - `scheduleOnce.bat` as an Administrator.
     - It will schedule the task using windows task scheduler, so that it would run periodically.
 
