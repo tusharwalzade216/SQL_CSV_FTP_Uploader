@@ -12,12 +12,13 @@ function Send-ToEmail([string]$file, [string]$srvpath, [string]$status) {
     $message.From = $Username;
     $message.To.Add("abcd@test.com");
     # $message.CC.Add("xyz@test.com");
-    $message.Subject = "Backup Uploaded - $($file)";
     $message.IsBodyHtml = $TRUE;
     if ($status -eq $TRUE) {
+        $message.Subject = "Backup Upload Sucessful - $($file)";
         $message.Body = "Your backup file - <b>$($file)</b> is successfully uploaded on location - <i>$($srvpath)</i>";
     }
     else {
+        $message.Subject = "Backup Upload Error - $($file)";
         $message.Body = "Something went wrong while uploading your backup file - <b>$($file)</b> on location - <i>$($srvpath)</i>...!";        
     }
 
