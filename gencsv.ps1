@@ -22,6 +22,9 @@ $queries = Get-Content -Path $($basePath + "query.sql")
 # A file to write logs
 $logFile = "$($basePath)executions.log"
 
+# process status to write into log
+$processStatus = "Success"
+
 foreach ($query in $queries) {
     # Get query as a string so that table name can be extracted
     $q = [string]$query
@@ -52,9 +55,11 @@ function Send-ToEmail([string]$files, [string]$srvpath, [string]$status) {
     if ($status -eq $TRUE) {
         $message.Subject = "Backup Upload Sucessful";
         $message.Body = "Your backup files - <b>$($files)</b> are successfully uploaded on location - <i>$($srvpath)</i>";
+        $processStatus = "Success";
     } else {
         $message.Subject = "Backup Upload Error";
         $message.Body = "Something went wrong while uploading your backup files - <b>$($files)</b> on location - <i>$($srvpath)</i>...!";        
+        $processStatus = "Failed";
     }
 
     $smtp = new-object Net.Mail.SmtpClient("smtp.mail.yahoo.com", "587");
@@ -112,6 +117,7 @@ if ($stopwatch.IsRunning -eq $FALSE) {
     Add-content -Path $logFile -Value "Execution End Time: $(Get-Date)`n"
     Add-content -Path $logFile -Value "Time Elapsed (in Minutes): $($stopwatch.Elapsed.TotalMinutes)`n"
     Add-content -Path $logFile -Value "Files Generated: $($outArr -join ", ")`n"
+    Add-content -Path $logFile -Value "Process Status: $($processStatus)`n"
     Add-content -Path $logFile -Value "---------------------------------------------------------------"
     Add-content -Path $logFile -Value "`r`n"
 }
