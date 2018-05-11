@@ -5,7 +5,7 @@ $stopwatch = [system.diagnostics.stopwatch]::StartNew()
 $startTime = Get-Date
 
 # base path where all necessary files are stored
-$basePath = "C:\SQL_CSV_FTP_Uploader\"
+$basePath = ".\"
 
 # File upload path at FTP/ SFTP server
 $uploadPath = "/*"
