@@ -22,7 +22,7 @@
 - A working FTP Server (eg. filezilla, for local)
 
 ==================================== Run ======================================
-- Download this project & keep all the files at this path - `C:\SQL_CSV_FTP_Uploader`
+- Download this project & keep all the files at same path - for eg. `C:\SQL_CSV_FTP_Uploader`
 - Update the necessary paths & FTP, SMTP credentials/ details in files
 - Run this file - `scheduleOnce.bat` as an Administrator.
     - It will schedule the task using windows task scheduler, so that it would run periodically.
